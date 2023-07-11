@@ -1,18 +1,16 @@
-import {
-  FacebookOutlined,
-  InstagramOutlined,
-  LinkOutlined,
-  GithubOutlined,
-} from '@ant-design/icons'
+import FacebookIcon from './../../assets/svg/facebook.svg'
+import InstagramIcon from './../../assets/svg/instagram.svg'
+import LinkedinIcon from './../../assets/svg/linkedin.svg'
+import GithubIcon from './../../assets/svg/github.svg'
 
-export const NavBar = () => {
+const NavBar = () => {
   return (
-    <nav className="flex bg-black justify-between px-12">
+    <nav className="flex bg-black justify-between px-12 py-5">
       <ul className="flex">
-        <FacebookOutlined className="text-3xl text-white" />
-        <InstagramOutlined className="text-3xl text-white" />
-        <LinkOutlined className="text-3xl text-white" />
-        <GithubOutlined className="text-3xl text-white" />
+        <FacebookIcon className="text-white mr-5 text-base" />
+        <InstagramIcon className="text-white mr-5" />
+        <LinkedinIcon className="text-white mr-5" />
+        <GithubIcon className="text-white mr-5" />
       </ul>
       <ul className="flex text-white">
         <li>Projects</li>
@@ -21,3 +19,5 @@ export const NavBar = () => {
     </nav>
   )
 }
+
+export default NavBar
