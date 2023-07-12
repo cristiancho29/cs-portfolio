@@ -11,7 +11,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body>
+      <body className="relative">
         <NavBar />
         <Header />
         {children}
