@@ -1,11 +1,44 @@
+'use client'
+
+import { useCallback, useEffect, useRef, useState } from 'react'
+import classNames from 'classnames'
 import FacebookIcon from './../../assets/svg/facebook.svg'
 import InstagramIcon from './../../assets/svg/instagram.svg'
 import LinkedinIcon from './../../assets/svg/linkedin.svg'
 import GithubIcon from './../../assets/svg/github.svg'
 
 const NavBar = () => {
+  const [hidden, setHidden] = useState(false)
+
+  const lastScroll = useRef(0)
+
+  const controlNavBar = useCallback(() => {
+    const currentScroll = window.scrollY
+    if (currentScroll > lastScroll.current) {
+      setHidden(true)
+    } else {
+      setHidden(false)
+    }
+    lastScroll.current = currentScroll
+  }, [])
+
+  useEffect(() => {
+    if (window) {
+      window.addEventListener('scroll', controlNavBar)
+      return () => {
+        window.removeEventListener('scroll', controlNavBar)
+      }
+    }
+  }, [controlNavBar])
+
   return (
-    <nav className="flex bg-black justify-between px-12 py-5 sticky top-0">
+    <nav
+      id="navbar"
+      className={classNames(
+        'flex bg-black justify-between px-12 py-5 sticky top-0 transition-all duration-300',
+        { 'top-[-70px]': hidden }
+      )}
+    >
       <ul className="flex">
         <a href="https://www.facebook.com/cdsuarez29/" target="_blank" rel="noreferrer">
           <FacebookIcon className="text-white mr-5 hover:text-slate-400 transition delay-75 duration-200" />
