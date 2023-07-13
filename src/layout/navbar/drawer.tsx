@@ -17,7 +17,7 @@ const Drawer = ({ open = false, onClose }: { open: boolean; onClose: MouseEventH
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-      <div className="flex flex-col h-screen bg-black w-60 ">
+      <div className="flex flex-col h-screen bg-black w-80">
         <ul className="flex-col text-white pl-4 mt-10">
           <li
             className="font-semibold my-4"
@@ -26,17 +26,23 @@ const Drawer = ({ open = false, onClose }: { open: boolean; onClose: MouseEventH
               onClose(e)
             }}
           >
-            <a href="#projects" className="hover:text-slate-400 transition delay-75 duration-200">
+            <a className="hover:text-slate-400 transition delay-75 duration-200 cursor-pointer">
               Projects
             </a>
           </li>
-          <li className="font-semibold my-4" onClick={onClose}>
-            <a href="#contact-me" className="hover:text-slate-400 transition delay-75 duration-200">
+          <li
+            className="font-semibold my-4"
+            onClick={(e) => {
+              document.getElementById('contact-me')?.scrollIntoView()
+              onClose(e)
+            }}
+          >
+            <a className="hover:text-slate-400 transition delay-75 duration-200 cursor-pointer">
               Contact me
             </a>
           </li>
         </ul>
-        <ul className="flex justify-between px-2 mt-auto mb-10">
+        <ul className="flex justify-between px-4 mt-auto mb-10">
           <a href="https://www.facebook.com/cdsuarez29/" target="_blank" rel="noreferrer">
             <FacebookIcon className="text-white hover:text-slate-400 transition delay-75 duration-200" />
           </a>
