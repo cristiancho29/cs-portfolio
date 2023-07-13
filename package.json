@@ -10,6 +10,7 @@
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./prettier.config.js"
   },
   "dependencies": {
+    "@headlessui/react": "1.7.15",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@svgr/webpack": "^8.0.1",
     "eslint": "^8.44.0",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^5.0.0-canary-7118f5dd7-20230705",
     "prettier": "^3.0.0"
