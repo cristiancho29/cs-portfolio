@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import mePhoto from '../../assets/images/me_photo.jpg'
+import mePhoto from '@/assets/images/me_photo.jpg'
 
 const Header = () => {
   return (
