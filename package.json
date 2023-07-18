@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./prettier.config.js"
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./prettier.config.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@headlessui/react": "1.7.15",
@@ -19,6 +20,7 @@
     "classnames": "2.3.2",
     "eslint-config-next": "13.4.9",
     "formik": "2.4.2",
+    "lint-staged": "13.2.3",
     "next": "13.4.9",
     "postcss": "8.4.25",
     "react": "18.2.0",
@@ -33,6 +35,13 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^5.0.0-canary-7118f5dd7-20230705",
+    "husky": "^8.0.0",
     "prettier": "^3.0.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,css,md,json}": [
+      "eslint --fix",
+      "prettier --config ./prettier.config.js --write"
+    ]
   }
 }
