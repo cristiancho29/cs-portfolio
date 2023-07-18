@@ -15,6 +15,7 @@ module.exports = {
       'error',
       { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },
     ],
+    'eol-last': 'error',
   },
   globals: {
     React: true,
