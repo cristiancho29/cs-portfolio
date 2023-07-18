@@ -9,7 +9,7 @@ const NavBarWeb = ({ hidden }: { hidden: boolean }) => {
     <div
       id="navbar"
       className={classNames(
-        'flex justify-between px-12 py-5 bg-black sticky top-0 transition-all duration-300',
+        'flex justify-between px-12 py-5 bg-black sticky top-0 transition-all duration-300 z-10',
         {
           'top-[-70px]': hidden,
         }
