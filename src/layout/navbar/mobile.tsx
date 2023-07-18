@@ -27,7 +27,7 @@ const NavBarMobile = ({ hidden }: { hidden: boolean }) => {
   return (
     <nav
       id="navbar"
-      className={classNames('bg-black sticky top-0 transition-all duration-300 py-3 px-5', {
+      className={classNames('bg-black sticky top-0 transition-all duration-300 py-3 px-5 z-10', {
         'top-[-70px]': hidden,
       })}
     >
