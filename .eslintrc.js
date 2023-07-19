@@ -19,5 +19,7 @@ module.exports = {
   },
   globals: {
     React: true,
+    IntersectionObserverInit: true,
+    IntersectionObserverCallback: true,
   },
 }
