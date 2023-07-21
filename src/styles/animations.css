@@ -195,6 +195,33 @@
   }
 }
 
+/**
+ * ----------------------------------------
+ * animation skeleton-pulse
+ * ----------------------------------------
+ */
+
+.skeleton-pulse {
+  -webkit-animation: skeleton-pulse 0.5s linear infinite alternate both;
+  animation: skeleton-pulse 0.5s linear infinite alternate both;
+}
+@-webkit-keyframes skeleton-pulse {
+  0% {
+    background: white;
+  }
+  100% {
+    @apply bg-slate-500;
+  }
+}
+@keyframes skeleton-pulse {
+  0% {
+    background: white;
+  }
+  100% {
+    @apply bg-slate-500;
+  }
+}
+
 .spinner {
   @apply border-4;
   @apply border-solid;

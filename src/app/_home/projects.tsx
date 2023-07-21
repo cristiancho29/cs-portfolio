@@ -37,7 +37,7 @@ const projects = [
 const Projects = () => {
   const [hidden, setHidden] = useState(true)
   const cbRef = useIntersectionObserver({
-    options: { threshold: 0.5 },
+    options: { threshold: 0.2 },
     cb: (entries) => {
       entries.forEach((entry) => {
         hidden && setHidden(!entry.isIntersecting)
@@ -49,7 +49,7 @@ const Projects = () => {
     <section
       id="projects"
       ref={cbRef}
-      className={classNames('bg-slate-700 py-6 w-full px-11', { invisible: hidden })}
+      className={classNames('bg-slate-700 py-6 w-full ', { invisible: hidden })}
     >
       <h1
         className={classNames('text-slate-400 font-bold text-4xl', {

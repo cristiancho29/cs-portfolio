@@ -17,7 +17,7 @@ const Drawer = ({ open = false, onClose }: { open: boolean; onClose: MouseEventH
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-      <div className="flex flex-col h-screen bg-black w-80">
+      <div className="flex flex-col h-screen bg-black w-[150px] min-w-[150px]">
         <ul className="flex-col text-white pl-4 mt-10">
           <li
             className="font-semibold my-4"
