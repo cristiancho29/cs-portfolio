@@ -49,7 +49,7 @@ const Projects = () => {
     <section
       id="projects"
       ref={cbRef}
-      className={classNames('bg-slate-700 py-6 w-full ', { invisible: hidden })}
+      className={classNames('bg-slate-700 pt-6 w-full not-mobile:px-11 px-5', { invisible: hidden })}
     >
       <h1
         className={classNames('text-slate-400 font-bold text-4xl', {
@@ -60,14 +60,14 @@ const Projects = () => {
       </h1>
       <div
         className={classNames(
-          'grid grid-cols-1 not-mobile:grid-cols-2 justify-items-center gap-y-4 gap-x-8 py-8',
+          'grid grid-cols-1 not-mobile:grid-cols-2 justify-items-center gap-y-4 gap-x-8 pt-8',
           { 'slide-in-project-content': !hidden }
         )}
       >
         {projects.map((project, index) => (
           <article
             key={index}
-            className="not-mobile:w-[100%] not-mobile:h-[100%] bg-slate-400 rounded-lg text-slate-800 pb-4"
+            className="not-mobile:w-[100%] not-mobile:h-[100%] bg-slate-400 rounded-lg text-slate-800"
           >
             <Image alt="project_photo" src={project.image} className="rounded-t-lg max-h-[210px]" />
             <h2 className="font-medium px-2 pt-2">{project.title}</h2>

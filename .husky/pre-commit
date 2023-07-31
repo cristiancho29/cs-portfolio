@@ -11,4 +11,6 @@ npm run lint ||
     false;
 ) 
 
-npx lint-staged
+npm run format
+## CHECK PERMISSION WITH LINT-STAGED
+## npx lint-staged
