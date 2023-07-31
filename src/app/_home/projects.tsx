@@ -49,7 +49,9 @@ const Projects = () => {
     <section
       id="projects"
       ref={cbRef}
-      className={classNames('bg-slate-700 pt-6 w-full not-mobile:px-11 px-5', { invisible: hidden })}
+      className={classNames('bg-slate-700 pt-6 w-full not-mobile:px-11 px-5', {
+        invisible: hidden,
+      })}
     >
       <h1
         className={classNames('text-slate-400 font-bold text-4xl', {
