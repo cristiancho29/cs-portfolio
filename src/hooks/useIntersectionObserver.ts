@@ -1,7 +1,7 @@
 'use client'
-import { useCallback, useRef } from 'react'
+import { useCallback, useRef, useState } from 'react'
 
-export const useIntersectionObserver = ({
+const useIntersectionObserver = ({
   options,
   cb,
 }: {
@@ -22,4 +22,17 @@ export const useIntersectionObserver = ({
     },
     [cb, options]
   )
+}
+
+export const useIntersectionObserverState = (options: IntersectionObserverInit) => {
+  const [hidden, setHidden] = useState(true)
+  const cbRef = useIntersectionObserver({
+    options: options,
+    cb: (entries) => {
+      entries.forEach((entry) => {
+        hidden && setHidden(!entry.isIntersecting)
+      })
+    },
+  })
+  return { hidden, cbRef }
 }

@@ -2,6 +2,7 @@
 import { Listbox, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import ArrowDownIcon from '@/assets/svg/arrow-down.svg'
+import classNames from 'classnames'
 
 const listOptions = [
   {
@@ -14,10 +15,14 @@ const listOptions = [
   },
 ]
 
-const ContactMeForm = () => {
+const ContactMeForm = ({ hidden }: { hidden: boolean }) => {
   const [selected, setSelected] = useState(listOptions[0])
   return (
-    <form className="grid max-w-80 grid-cols-1 not-mobile:grid-cols-2 gap-4">
+    <form
+      className={classNames('grid max-w-80 grid-cols-1 not-mobile:grid-cols-2 gap-4', {
+        'slide-in-content': !hidden,
+      })}
+    >
       <div className="flex flex-col not-mobile:col-span-1">
         <label className="mb-2 text-lg font-medium text-slate-400">Name</label>
         <input className="rounded p-2" />

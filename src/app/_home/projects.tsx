@@ -1,12 +1,11 @@
 'use client'
-import { useState } from 'react'
 import Image from 'next/image'
 import classNames from 'classnames'
 import bcPhoto from '@/assets/images/bc.png'
 import capacityLandingPhoto from '@/assets/images/capacity-landing.png'
 import capacityPhoto from '@/assets/images/capacity.png'
 import edgeWebsitePhoto from '@/assets/images/edge_website.png'
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import { useIntersectionObserverState } from '@/hooks/useIntersectionObserver'
 
 const projects = [
   {
@@ -35,15 +34,7 @@ const projects = [
 ]
 
 const Projects = () => {
-  const [hidden, setHidden] = useState(true)
-  const cbRef = useIntersectionObserver({
-    options: { threshold: 0.2 },
-    cb: (entries) => {
-      entries.forEach((entry) => {
-        hidden && setHidden(!entry.isIntersecting)
-      })
-    },
-  })
+  const { cbRef, hidden } = useIntersectionObserverState({ threshold: 0.2 })
 
   return (
     <section
@@ -55,7 +46,7 @@ const Projects = () => {
     >
       <h1
         className={classNames('text-slate-400 font-bold text-4xl', {
-          'slide-in-projects-title': !hidden,
+          'slide-in-title': !hidden,
         })}
       >
         Featured Projects
@@ -63,7 +54,7 @@ const Projects = () => {
       <div
         className={classNames(
           'grid grid-cols-1 not-mobile:grid-cols-2 justify-items-center gap-y-4 gap-x-8 pt-8',
-          { 'slide-in-project-content': !hidden }
+          { 'slide-in-content': !hidden }
         )}
       >
         {projects.map((project, index) => (
