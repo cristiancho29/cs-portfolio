@@ -34,7 +34,7 @@ const projects = [
 ]
 
 const Projects = () => {
-  const { cbRef, hidden } = useIntersectionObserverState({ threshold: 0.2 })
+  const { cbRef, hidden } = useIntersectionObserverState({ threshold: 0.1 })
 
   return (
     <section
