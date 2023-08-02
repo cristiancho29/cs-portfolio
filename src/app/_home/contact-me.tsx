@@ -4,7 +4,7 @@ import ContactMeForm from './contact-me-form'
 import classNames from 'classnames'
 
 const ContactMe = () => {
-  const { cbRef, hidden } = useIntersectionObserverState({ threshold: 0.5 })
+  const { cbRef, hidden } = useIntersectionObserverState({ threshold: 0.2 })
 
   return (
     <section
